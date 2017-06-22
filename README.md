@@ -13,19 +13,4 @@ computer.
 - [ ] Each player takes the top 5 cards from his hand and looks at them (in secret)
 - [ ] “Someone” flips the two middle cards face-up
 
-## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed
-by adding `speed` to your list of dependencies in `mix.exs`:
-
-```elixir
-def deps do
-  [{:speed, "~> 0.1.0"}]
-end
-```
-
-Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
-and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
-be found at [https://hexdocs.pm/speed](https://hexdocs.pm/speed).
-
 [Speed-Wikipedia]: https://en.wikipedia.org/wiki/Speed_%28card_game%29 "“Speed (card game) at Wikipedia”"
