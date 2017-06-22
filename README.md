@@ -4,7 +4,7 @@ Speed is a card game for one player to play against the computer.
 
 ## TODO
 
-- [ ] Start a new game
+- [x] Start a new game
 - [ ] Define the deck: standard 50-card deck (no jokers)
 - [ ] Deal four piles of cards, face-down: 5, then 1, then 1, then 5
 - [ ] Deal two hands, face-down, of 19 cards each (alternating between players)
