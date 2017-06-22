@@ -19,4 +19,24 @@ defmodule Speed.Deck do
       "#{value}#{suit}"
     end
   end
+
+  @doc """
+  Shuffles the specified `deck`.
+
+  ## Examples
+
+      iex> deck = Speed.Deck.new
+      ...> shuffled_deck = Speed.Deck.shuffle(deck)
+      ...> length(shuffled_deck) == length(deck)
+      true
+
+      iex> deck = Speed.Deck.new
+      ...> shuffled1 = Speed.Deck.shuffle(deck)
+      ...> shuffled2 = Speed.Deck.shuffle(deck)
+      ...> shuffled1 == shuffled2
+      false
+  """
+  def shuffle(deck) do
+    Enum.shuffle deck
+  end
 end
