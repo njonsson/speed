@@ -1,6 +1,7 @@
 # Speed
 
-Speed is a card game for one player to play against the computer.
+[Speed][Speed-Wikipedia] is a card game for one player to play against the
+computer.
 
 ## TODO
 
@@ -27,3 +28,4 @@ Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_do
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/speed](https://hexdocs.pm/speed).
 
+[Speed-Wikipedia]: https://en.wikipedia.org/wiki/Speed_%28card_game%29 "“Speed (card game) at Wikipedia”"
