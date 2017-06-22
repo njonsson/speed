@@ -8,6 +8,7 @@ defmodule Speed.Mixfile do
      elixir: "~> 1.4",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     escript: escript(),
      deps: deps(),
      preferred_cli_env: %{:coveralls          => :test,
                           :"coveralls.detail" => :test,
@@ -57,6 +58,8 @@ defmodule Speed.Mixfile do
   defp description do
     "The card game Speed — a first programming project with my 11-year-old son"
   end
+
+  defp escript, do: [main_module: Speed.CLI]
 
   defp package do
     [files:       [# "History.md",
