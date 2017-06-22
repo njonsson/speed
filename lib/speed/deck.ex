@@ -49,5 +49,5 @@ defmodule Speed.Deck do
       false
   """
   @spec shuffle(t) :: t
-  def shuffle(deck), do: Enum.shuffle deck
+  defdelegate shuffle(deck), to: Enum
 end
