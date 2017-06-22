@@ -1,23 +1,35 @@
 defmodule Speed.Deck do
   @moduledoc """
-  A deck of cards used for playing Speed.
+  A deck of playing cards.
   """
 
+  @typedoc "A list of binaries representing playing cards."
+  @type t :: [binary]
+
   @suits ~w( ♠ ♣ ♥ ♦ )
-  @values ~w( A 2 3 4 5 6 7 8 9 10 J Q K )
+  @numbers ~w( A 2 3 4 5 6 7 8 9 10 J Q K )
 
   @doc """
-  Builds a new deck of cards with no jokers.
+  Constructs a deck using the specified `options`.
 
   ## Example
 
       iex> Speed.Deck.new
       ["A♠", "2♠", "3♠", "4♠", "5♠", "6♠", "7♠", "8♠", "9♠", "10♠", "J♠", "Q♠", "K♠", "A♣", "2♣", "3♣", "4♣", "5♣", "6♣", "7♣", "8♣", "9♣", "10♣", "J♣", "Q♣", "K♣", "A♥", "2♥", "3♥", "4♥", "5♥", "6♥", "7♥", "8♥", "9♥", "10♥", "J♥", "Q♥", "K♥", "A♦", "2♦", "3♦", "4♦", "5♦", "6♦", "7♦", "8♦", "9♦", "10♦", "J♦", "Q♦", "K♦"]
+
+      iex> Speed.Deck.new jokers: true
+      ["A♠", "2♠", "3♠", "4♠", "5♠", "6♠", "7♠", "8♠", "9♠", "10♠", "J♠", "Q♠", "K♠", "A♣", "2♣", "3♣", "4♣", "5♣", "6♣", "7♣", "8♣", "9♣", "10♣", "J♣", "Q♣", "K♣", "A♥", "2♥", "3♥", "4♥", "5♥", "6♥", "7♥", "8♥", "9♥", "10♥", "J♥", "Q♥", "K♥", "A♦", "2♦", "3♦", "4♦", "5♦", "6♦", "7♦", "8♦", "9♦", "10♦", "J♦", "Q♦", "K♦", "🃏", "🃏"]
+
+      iex> Speed.Deck.new jokers: false
+      ["A♠", "2♠", "3♠", "4♠", "5♠", "6♠", "7♠", "8♠", "9♠", "10♠", "J♠", "Q♠", "K♠", "A♣", "2♣", "3♣", "4♣", "5♣", "6♣", "7♣", "8♣", "9♣", "10♣", "J♣", "Q♣", "K♣", "A♥", "2♥", "3♥", "4♥", "5♥", "6♥", "7♥", "8♥", "9♥", "10♥", "J♥", "Q♥", "K♥", "A♦", "2♦", "3♦", "4♦", "5♦", "6♦", "7♦", "8♦", "9♦", "10♦", "J♦", "Q♦", "K♦"]
   """
-  def new do
-    for suit <- @suits, value <- @values do
-      "#{value}#{suit}"
-    end
+  @spec new(keyword(jokers: boolean)) :: t
+  def new(options \\ [])
+
+  def new(jokers: true), do: new() ++ ~w( 🃏 🃏 )
+
+  def new(_options) do
+    for suit <- @suits, number <- @numbers, do: "#{number}#{suit}"
   end
 
   @doc """
@@ -36,7 +48,6 @@ defmodule Speed.Deck do
       ...> shuffled1 == shuffled2
       false
   """
-  def shuffle(deck) do
-    Enum.shuffle deck
-  end
+  @spec shuffle(t) :: t
+  def shuffle(deck), do: Enum.shuffle deck
 end
