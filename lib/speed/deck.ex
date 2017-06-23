@@ -1,6 +1,6 @@
 defmodule Speed.Deck do
   @moduledoc """
-  A deck of playing cards.
+  Provides functions for working with a deck of playing cards.
   """
 
   @typedoc "A list of binaries representing playing cards."
